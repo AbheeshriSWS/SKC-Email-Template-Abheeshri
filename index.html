@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKC Payment Gateway</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <style>
+        body{
+            font-family: "Inter", sans-serif;
+        }
+		.header-img img {
+			aspect-ratio: 277 / 96;
+			max-width: 277px;
+			width: 100%;
+		}
+		
+		.header-row p {
+            text-align: center;
+            color: #87766E;
+            text-transform: uppercase;
+            letter-spacing: 2.4px;
+            font-size: 12px;
+            line-height: 16px;
+            position: relative;
+            padding: 12px 0 45px 0;
+        }
+
+		.header-wrapper {
+			padding-top: 65px;
+		}
+
+		.header-row p::before {
+			position: absolute;
+			content: "";
+			background-color: #C75C384D;
+			width: 32px;
+			height: 1px;
+			left: 1px;
+			top: 27%;
+		}
+		.header-row p::after {
+			position: absolute;
+			content: "";
+			background-color: #C75C384D;
+			width: 32px;
+			height: 1px;
+			right: 1px;
+			top: 27%;
+		}
+
+        h6{
+            font-family: "Cormorant Garamond", serif;
+            font-size: 24px;
+        }
+        p, label{
+            color: #6b7280;
+        }
+        label{
+            font-size: 12px !important;
+            font-weight: 500;
+            letter-spacing: 0.6px;
+        }
+
+        input, select{
+            border: 2px solid #dcdcdc;
+            border-radius: 8px;
+            outline: none;
+            line-height: 20px;  
+            height: 44px;
+            background-color: #fff;            
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border: 1px solid #ded6cf !important;
+            outline: 2px solid #c75c38 !important;
+            box-shadow: none !important; 
+            outline-offset: 2px;
+        }
+
+        input::placeholder, select, textarea {
+            color: #6b7280 !important; 
+            font-size: 14px !important;
+        }
+
+        .checkboxx{
+			position: relative;
+			cursor: pointer;
+		}
+		.checkboxx label{
+			font-size: 14px;
+			cursor: pointer;
+		}
+		.checkboxx label a {
+			color: #C75C38;
+			text-decoration: underline;
+			cursor: pointer;
+		}
+		.checkboxx input{
+			opacity: 0;
+		}
+		.checkboxx span {
+			height: 15px;
+			width: 15px;
+			border: 1px solid #C75C38;
+			padding: 5px;
+			display: inline-block;
+			border-radius: 5px;
+			position: absolute;
+			top: 25%;
+			left: 0;
+			cursor: pointer;
+		}
+		.checkboxx input:checked + span::after {
+			content: "✓";
+			position: absolute;
+			left: 0;
+			top: -1px;
+			font-size: 12px;
+			color: #fff;
+			font-weight: bold;
+			background-color: #C75C38;
+			border-radius: 5px;
+			width: 15px;
+			height: 15px;
+		}
+		.checkboxx span::after {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+        .pay-button {
+			background-color: #c75c38;
+			color: #fff;
+			height: 48px;
+			font-weight: 600;
+			font-size: 16px;
+			line-height: 24px;
+			border-radius: 8px;
+            opacity: 0.5;
+		}
+		.pay-button:hover{
+			color: #fff;
+            background-color: #c75c38;
+		}
+	</style>
+</head>
+<body>
+
+    <div class="header-wrapper">
+        <div class="header-row d-grid justify-content-center align-items-center">
+                <div class="header-img">
+                    <img src="https://skc.payanyfee.com/assets/images/logo-img.png" alt="logo icon">
+                </div>
+                <p class="m-0">Powered by PayAnyFee</p>
+        </div>
+    </div>
+
+
+    <div class="container d-flex justify-content-center align-items-center">
+        
+        <div class="card" style="max-width: 410px; width: 100%; border-radius: 16px; background-color: #F7F5F3; padding: 32px; border: 1px solid #e6e0db99; box-shadow: 0 20px 25px -5px hsl(15 56% 50% / .05), 0 8px 10px -6px hsl(15 56% 50% / .05);">
+
+            <!-- Form Title -->
+            <h6 class="fw-semibold mb-1">Program Fee Payment</h6>
+            <p class="small mb-4">Complete your details to proceed</p>
+
+            <!-- Form -->
+            <form>
+            
+            <div class="mb-3">
+                <label class="form-label small text-uppercase">Full Name</label>
+                <input type="text" class="form-control px-3 py-2" placeholder="Enter your full name">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label small text-uppercase">Email Address</label>
+                <input type="email" class="form-control px-3 py-2" placeholder="you@example.com">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label small text-uppercase">Mobile Number</label>
+                <input type="text" class="form-control px-3 py-2" placeholder="+91 9876543210">
+            </div>
+
+            <!-- Program -->
+            <div class="mb-3">
+                <label class="form-label small text-uppercase">Program</label>
+                <select class="form-select">
+                <option selected disabled>Select a program</option>
+                <option>Advance Payment</option>
+                <option>Anaavaran</option>
+                <option>EW - Envisioning Workshop</option>
+                <option>EOS - Essential of Success</option>
+                <option>CSP - Conscious Sales Program</option>
+                <option>CEP - Conscious Entrepreneurship Program</option>
+                </select>
+                <div class="my-4" style="font-size: 11px; text-align: center; color: #87766e99;">* Logistics cost extra</div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label small text-uppercase">Message </label><span class="text-lowercase" style="font-size: 11px; color: #87766e99;">(optional)</span>
+                <textarea class="form-control" rows="3" placeholder="Any additional information..."></textarea>
+            </div>
+
+            <div class="form-group form-check checkboxx">
+                <label class="form-check-label" for="exampleCheck1" style="font-size: 14px !important;">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+                <span></span>
+                I agree to the <a href="javascript:void(0)" target="_top">Terms and Conditions</a>
+                </label>
+            </div>
+
+            <div class="d-grid mt-3">
+                <button type="submit" class="btn pay-button">
+                Pay Now
+                </button>
+            </div>
+
+            </form>
+        </div>
+
+    </div>
+
+    <p class="text-center small mt-4 mb-0 text-uppercase" style="font-size: 11px; color: #87766e99; padding-bottom: 64px; letter-spacing: 1.65px;">
+            Secure payments via Razorpay
+            </p>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
