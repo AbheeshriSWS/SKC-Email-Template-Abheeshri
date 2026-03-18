@@ -89,14 +89,23 @@
             outline-offset: 2px;
         }
 
-        input::placeholder, select, textarea {
+        input::placeholder, textarea {
             color: #6b7280 !important; 
+            font-size: 14px !important;
+        }
+
+        select{
+            color: #261c17 !important;
             font-size: 14px !important;
         }
 
         textarea{
             padding: 8px 12px !important;
             margin-bottom: 20px;
+            border-color: #ded6cf !important;
+            border-radius: 8px !important;
+            outline: none !important;
+            background-color: #fff !important;
         }
 
         .checkboxx {
@@ -156,6 +165,7 @@
 			line-height: 24px;
 			border-radius: 8px;
             opacity: 0.5;
+            box-shadow: 0 10px 15px -3px hsla(15, 56%, 50%, 0.2), 0 4px 6px -4px hsla(15, 56%, 50%, 0.2);
 		}
 		.pay-button:hover{
 			color: #fff;
@@ -217,7 +227,7 @@
             </div>
 
             <div class="mb-3">
-                <label class="form-label small text-uppercase"  style="margin: 8px 0 !important;">Message </label><span class="text-lowercase" style="font-size: 11px; color: #87766e99;">(optional)</span>
+                <label class="form-label small text-uppercase"  style="margin: 8px 0 !important;">Message </label><span class="text-lowercase" style="font-size: 12px; color: #87766e99;">(optional)</span>
                 <textarea class="form-control" rows="3" placeholder="Any additional information..."></textarea>
             </div>
 
